@@ -6,6 +6,22 @@
   <title>WOW SCHOOL — Go Getter 1</title>
   <meta name="color-scheme" content="dark light" />
   <link rel="stylesheet" href="style.css?v=4" />
+  <script>
+/* Miro init + дефолты zoom/fs */
+(function () {
+  const qs = new URLSearchParams(location.search);
+
+  // флаг режима Miro
+  if (qs.has('miro')) document.documentElement.classList.add('miro');
+
+  // читаем параметры (или задаём комфортные дефолты)
+  const z  = parseFloat(qs.get('zoom'));
+  const fs = parseFloat(qs.get('fs'));
+  document.documentElement.style.setProperty('--miro-zoom',  Number.isFinite(z)  ? z  : 1.35);
+  document.documentElement.style.setProperty('--miro-font-scale', Number.isFinite(fs) ? fs : 1.20);
+})();
+</script>
+
 </head>
 <body>
   <!-- Обложка (постер) поверх плеера -->
