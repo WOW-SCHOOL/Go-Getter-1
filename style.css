@@ -232,6 +232,25 @@ html.miro body{
 /* квадратный холст (высота = ширина viewport) */
 html.square, html.square body{ height: 100%; }
 html.square body{ aspect-ratio: 1 / 1; overflow: auto; }
+/* ===== ADD-ON: масштаб всей страницы в Miro ===== */
+
+/* если переменных ещё нет — не страшно; переопределим */
+:root{
+  --miro-zoom: 1;         /* общий масштаб страницы */
+  --miro-font-scale: 1;   /* дополнительный множитель кегля */
+}
+
+/* Масштабируем весь документ, чтобы выросли и px, и rem, и кнопки */
+html.miro body{
+  transform: scale(var(--miro-zoom));
+  transform-origin: top left;
+  /* компенсируем масштаб, чтобы контент вписывался в viewport iFrame */
+  width:  calc(100% / var(--miro-zoom));
+  height: calc(100% / var(--miro-zoom));
+  /* и слегка увеличим базовый шрифт, чтобы межстрочные/иконки были гармоничнее */
+  font-size: calc(16px * var(--miro-font-scale));
+}
+
 
 
 
