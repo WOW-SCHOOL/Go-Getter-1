@@ -214,5 +214,24 @@ body{
   /* поместим кнопку поверх центра картинки */
   position: absolute;
 }
+/* ==== ADD-ON: масштаб и квадрат для Miro ==== */
+:root{
+  --miro-zoom: 1;   /* ставится скриптом из URL или дефолт 1.25 */
+  --miro-fs:   1;   /* умножитель кегля */
+}
+
+/* аккуратный масштаб всей страницы внутри iFrame */
+html.miro body{
+  transform: scale(var(--miro-zoom));
+  transform-origin: top left;
+  width:  calc(100% / var(--miro-zoom));
+  height: calc(100% / var(--miro-zoom));
+  font-size: calc(16px * var(--miro-fs)); /* укрупняем весь интерфейс */
+}
+
+/* квадратный холст (высота = ширина viewport) */
+html.square, html.square body{ height: 100%; }
+html.square body{ aspect-ratio: 1 / 1; overflow: auto; }
+
 
 
