@@ -20,6 +20,26 @@
   <header class="site-head">
     <div class="brand">WOW SCHOOL</div>
     <h1 class="page-title">Go Getter 1</h1>
+    <script>
+      
+/* Miro/Zoom/Square init — не ломает существующий код */
+(function () {
+  const qs = new URLSearchParams(location.search);
+
+  // режим Miro
+  if (qs.has('miro')) document.documentElement.classList.add('miro');
+
+  // дефолтный укрупняющий масштаб (можно переопределить параметрами)
+  const z  = parseFloat(qs.get('zoom'));
+  const fs = parseFloat(qs.get('fs'));
+  document.documentElement.style.setProperty('--miro-zoom',  Number.isFinite(z)  ? z  : 1.25);
+  document.documentElement.style.setProperty('--miro-fs',    Number.isFinite(fs) ? fs : 1.25);
+
+  // квадратный режим по флагу ?square=1
+  if (qs.get('square') === '1') document.documentElement.classList.add('square');
+})();
+</script>
+
   </header>
 
   <main class="player-card" role="region" aria-label="Аудиоплеер">
