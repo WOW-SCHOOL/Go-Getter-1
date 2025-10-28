@@ -3,33 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WOW SCHOOL — English File: Pre-Intermediate</title>
+  <title>WOW SCHOOL — Go Getter 1</title>
   <meta name="color-scheme" content="dark light" />
   <link rel="stylesheet" href="style.css?v=4" />
-
-  <!-- ADD-ON: Инициализация Miro/Zoom/Square. НИЧЕГО НЕ ЛОМАЕТ. -->
-  <script>
-  (function () {
-    const qs = new URLSearchParams(location.search);
-
-    // Режим Miro (включает масштабирование ниже)
-    if (qs.has('miro')) document.documentElement.classList.add('miro');
-
-    // Крупный старт по умолчанию, можно переопределить ?zoom= и ?fs=
-    const z  = parseFloat(qs.get('zoom'));
-    const fs = parseFloat(qs.get('fs'));
-    document.documentElement.style.setProperty('--miro-zoom',       Number.isFinite(z)  ? z  : 1.35);
-    document.documentElement.style.setProperty('--miro-font-scale', Number.isFinite(fs) ? fs : 1.20);
-
-    // Квадратный режим по флагу ?square=1 (держит квадратное полотно внутри iFrame)
-    if (qs.get('square') === '1') document.documentElement.classList.add('square');
-  })();
-  </script>
 </head>
 <body>
   <!-- Обложка (постер) поверх плеера -->
 <div id="poster" class="poster" role="button" aria-label="Открыть плеер" tabindex="0">
-  <img src="cover.jpg" alt="English File — Pre-Intermediate (cover)" />
+  <img src="cover.jpg" alt="Go Getter 1 (cover)" />
   <button class="poster-play" aria-label="Play">
     <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
       <path d="M8 5v14l11-7z" fill="currentColor"></path>
@@ -38,7 +19,7 @@
 </div>
   <header class="site-head">
     <div class="brand">WOW SCHOOL</div>
-    <h1 class="page-title">English File: Pre-Intermediate</h1>
+    <h1 class="page-title">Go Getter 1</h1>
   </header>
 
   <main class="player-card" role="region" aria-label="Аудиоплеер">
